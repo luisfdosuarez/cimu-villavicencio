@@ -6,17 +6,54 @@
     <title>Central de Inteligencia de Movilidad Urbana - Villavicencio</title>
     <!-- Enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <!-- Enlace a la hoja de estilos personalizada -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos personalizados directamente en el HTML para pruebas -->
+    <style>
+        /* Estilo para el menú de navegación */
+        .navbar {
+            background-color: #ffffff; /* Color de fondo blanco */
+            border-radius: 50px; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 10px 20px;
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            width: 30px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            color: #333;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #007bff; /* Color azul para el enlace activo */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0056b3; /* Color azul más oscuro al pasar el cursor */
+        }
+    </style>
 </head>
 <body>
 
     <!-- Menú de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-pill mx-auto mt-3 p-2 shadow-sm" style="max-width: 1200px;">
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="img/CIMU_Transp.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span class="fw-bold">CIMU Villavicencio</span>
+            <a class="navbar-brand" href="#">
+                <img src="img/CIMU_Transp.png" alt="Logo">
+                CIMU Villavicencio
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,18 +77,9 @@
         </div>
     </nav>
 
-    <!-- Sección de prueba para confirmar carga de CSS -->
-    <div class="container mt-5">
-        <h1 class="text-center">Bienvenidos a la CIMU Villavicencio</h1>
-        <p class="text-center">Esta es una prueba de estructura y estilo inicial para el proyecto de la Central de Inteligencia de Movilidad Urbana.</p>
-    </div>
-
     <!-- Enlace a Bootstrap JS y dependencias -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <!-- Enlace al archivo JavaScript personalizado -->
-    <script src="js/scripts.js"></script>
-
 </body>
 </html>
