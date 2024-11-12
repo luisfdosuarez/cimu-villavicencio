@@ -1,65 +1,54 @@
-/* styles.css */
-
-/* Estilo para el menú de navegación */
+/* Estilos para el menú de navegación */
 .navbar {
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 50px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.2rem;
+.navbar-nav {
+    margin-left: auto;
+    padding-left: 0;
+}
+
+.nav-item {
+    list-style: none; /* Elimina los bullets de los elementos de la lista */
 }
 
 .nav-link {
     font-size: 1rem;
+    color: #333;
     padding: 0.5rem 1rem;
-}
-
-.nav-link.active {
-    color: #007bff; /* Color azul para el enlace activo */
+    text-decoration: none; /* Elimina el subrayado */
 }
 
 .nav-link:hover {
-    color: #0056b3; /* Color azul más oscuro al pasar el cursor */
+    color: #0056b3; /* Cambia el color al pasar el cursor */
 }
 
-/* Estilo para la sección de bienvenida */
-header {
-    background-color: #007bff; /* Color de fondo azul */
-    color: #ffffff; /* Texto blanco */
-    padding: 60px 0;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-header p.lead {
-    font-size: 1.25rem;
-    margin-bottom: 0;
-}
-/* Estilo para el contenedor parallax */
+/* Estilos para el efecto parallax */
 .parallax-container {
     position: relative;
-    height: 100vh; /* Altura de la ventana gráfica */
-    background-image: url('../img/CIMU_COIN.jpg'); /* Primera imagen de fondo */
+    height: 100vh;
+    background-image: url('../img/Urban_traffic_map_stylized.png'); /* Verifica que la ruta sea correcta */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    transition: background-image 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
 }
 
-/* Estilo para el contenido */
-.parallax-container {
-    position: relative;
-    height: 100vh; /* Ocupa toda la pantalla */
-    background-image: url('../img/Urban_traffic_map_stylized.png'); /* Ruta de tu imagen */
-    background-attachment: fixed; /* Fija la imagen en su posición */
-    background-size: cover; /* Asegura que la imagen cubra el contenedor */
-    background-position: center;
-    transition: background-image 0.5s ease-in-out; /* Transición suave si cambias la imagen */
+/* Estilos para el texto de bienvenida */
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.welcome-text.visible {
+    opacity: 1;
 }
