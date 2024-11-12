@@ -1,13 +1,12 @@
 // scripts.js
-
-document.addEventListener('scroll', function() {
-    const parallaxContainer = document.querySelector('.parallax-container');
+document.addEventListener('scroll', function () {
+    const welcomeText = document.getElementById('welcomeText');
     const scrollPosition = window.scrollY;
 
-    // Cambia la imagen de fondo después de 300 píxeles de desplazamiento
-    if (scrollPosition > 300) {
-        parallaxContainer.style.backgroundImage = "url('../img/CIMU_NO_RIDGES.png')";
+    // Muestra el texto cuando el usuario hace scroll a 200px
+    if (scrollPosition > 200) {
+        welcomeText.classList.add('visible');
     } else {
-        parallaxContainer.style.backgroundImage = "url('../img/CIMU_COIN.jpg')";
+        welcomeText.classList.remove('visible');
     }
 });
