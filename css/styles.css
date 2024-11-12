@@ -1,26 +1,32 @@
 /* styles.css */
 
-/* Estilo básico para el logo y el contenedor */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: lightblue;
+/* Estilo para el menú de navegación */
+.navbar {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 10px 20px;
 }
 
-.logo-container {
-    text-align: center;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link.active {
+    color: #007bff; /* Color azul para el enlace activo */
+}
+
+.nav-link:hover {
+    color: #0056b3; /* Color azul más oscuro al pasar el cursor */
 }
 
 .logo {
-    width: 100px;
+    width: 30px;
     height: auto;
-    margin-bottom: 20px;
-}
-
-h1 {
-    color: #333;
 }
