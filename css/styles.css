@@ -2,31 +2,45 @@
 
 /* Estilo para el menú de navegación */
 .navbar {
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 50px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
+    max-width: 1100px;
+    margin: 20px auto;
 }
 
 .navbar-brand {
     font-weight: bold;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none; /* Quita el subrayado */
 }
 
-.nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link.active {
-    color: #007bff; /* Color azul para el enlace activo */
-}
-
-.nav-link:hover {
-    color: #0056b3; /* Color azul más oscuro al pasar el cursor */
-}
-
-.logo {
+.navbar-brand img {
     width: 30px;
     height: auto;
+    margin-right: 8px;
+}
+
+.navbar-nav {
+    list-style: none; /* Quita los bullets */
+    padding-left: 0;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none; /* Quita el subrayado */
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
 }
