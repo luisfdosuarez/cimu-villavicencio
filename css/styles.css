@@ -54,19 +54,12 @@ header p.lead {
 }
 
 /* Estilo para el contenido */
-.parallax-container .content {
+.parallax-container {
     position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.parallax-container .content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.parallax-container .content p {
-    font-size: 1.5rem;
+    height: 100vh; /* Ocupa toda la pantalla */
+    background-image: url('../img/Urban_traffic_map_stylized.png'); /* Ruta de tu imagen */
+    background-attachment: fixed; /* Fija la imagen en su posición */
+    background-size: cover; /* Asegura que la imagen cubra el contenedor */
+    background-position: center;
+    transition: background-image 0.5s ease-in-out; /* Transición suave si cambias la imagen */
 }
