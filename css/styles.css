@@ -1,12 +1,26 @@
 /* styles.css */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-}
+
+/* Estilo para el menú de navegación */
 .navbar {
-  background-color: #1e2330;
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-.navbar-brand, .nav-link {
-  color: #fff !important;
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link.active {
+    color: #007bff; /* Color azul para el enlace activo */
+}
+
+.nav-link:hover {
+    color: #0056b3; /* Color azul más oscuro al pasar el cursor */
 }
