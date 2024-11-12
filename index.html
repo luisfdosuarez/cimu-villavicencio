@@ -3,15 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Información de Movilidad Urbana - Villavicencio</title>
+    <title>Central de Inteligencia de Movilidad Urbana - Villavicencio</title>
     <!-- Enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Enlace a la hoja de estilos personalizada -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Contenido del sitio web -->
-    <!-- Aquí se incluirán las secciones como la barra de navegación, encabezado, secciones de contenido, etc. -->
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/CIMU Transp.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                CIMU Villavicencio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Crowdfunding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Datos de Tráfico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Central de Inteligencia de Movilidad Urbana</h1>
+            <p class="lead">Mejorando la movilidad en Villavicencio a través de la participación ciudadana</p>
+        </div>
+    </header>
+
+    <!-- Sección de Crowdfunding -->
+    <section id="crowdfunding" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Crowdfunding Comunitario</h2>
+            <p class="text-center">Participa en nuestros proyectos y sé parte del cambio en la movilidad urbana.</p>
+            <!-- Contenido adicional -->
+        </div>
+    </section>
+
+    <!-- Sección de Datos de Tráfico -->
+    <section id="datos-trafico" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Visualización de Datos de Tráfico</h2>
+            <p class="text-center">Analiza los datos de tráfico en tiempo real y contribuye con tus observaciones.</p>
+            <!-- Gráfico interactivo -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Enlace a Bootstrap JS y dependencias -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,3 +78,4 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
