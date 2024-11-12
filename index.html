@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Inteligencia de Movilidad Urbana - Villavicencio</title>
     <style>
+        /* Estilos básicos */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,63 +18,36 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
         }
-        .section {
+        /* Logo Animado */
+        .logo {
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            animation: fadeIn 2s ease-in-out;
+            margin-bottom: 10px;
+        }
+        /* Efecto de aparición */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        /* Secciones con efectos de desplazamiento */
+        .section, .crowdfunding-section {
             padding: 40px 20px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .section h2 {
-            color: #1e2330;
-            font-size: 24px;
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .section p {
-            color: #555;
-            font-size: 16px;
-            max-width: 600px;
-            margin: auto;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .feature-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
-        }
-        .feature-box h3 {
-            color: #1e2330;
-            font-size: 18px;
-            margin-top: 0;
-        }
-        .feature-box p {
-            color: #666;
-            font-size: 14px;
-        }
-        .data-visualization {
-            background-color: #f0f8ff;
-            padding: 40px 20px;
-        }
-        .crowdfunding-section {
-            background-color: #ffe5b4;
-            padding: 40px 20px;
-        }
-        .crowdfunding-section h2 {
-            color: #d96c06;
-        }
-        .crowdfunding-section p {
-            color: #333;
-            font-size: 16px;
-        }
+        /* Botón de donación interactivo */
         .donate-button {
             background-color: #d96c06;
             color: white;
@@ -83,34 +57,30 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 15px;
+            transition: background-color 0.3s ease;
         }
-        .chatbot-section {
-            background-color: #e0e7ef;
-            padding: 40px 20px;
-        }
-        footer {
-            background-color: #1e2330;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        .donate-button:hover {
+            background-color: #b95c05;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <!-- Enlace directo al logo usando la URL de "raw" -->
+    <img src="https://github.com/luisfdosuarez/cimu-villavicencio/raw/main/CIMU%20Transp.png" alt="Logo CIMU" class="logo">
     <h1>Central de Inteligencia de Movilidad Urbana (CIMU)</h1>
     <p>Villavicencio</p>
 </header>
 
 <!-- Sección de Introducción -->
-<section class="section">
+<section class="section" id="intro">
     <h2>Bienvenido a la CIMU de Villavicencio</h2>
     <p>La CIMU es una iniciativa para optimizar la movilidad urbana en Villavicencio mediante el análisis de datos de tráfico en tiempo real. A través de esta plataforma, la Secretaría de Movilidad podrá tomar decisiones informadas que beneficien a todos los ciudadanos.</p>
 </section>
 
 <!-- Sección de Funcionalidades -->
-<section class="section">
+<section class="section" id="features">
     <h2>Funcionalidades Clave</h2>
     <div class="features">
         <div class="feature-box">
@@ -128,26 +98,25 @@
     </div>
 </section>
 
-<!-- Sección de Visualización de Datos -->
-<section class="data-visualization">
-    <h2>Visualización de Datos de Tráfico</h2>
-    <p>Explora gráficos y mapas interactivos que muestran el flujo de tráfico, las áreas de alta congestión, y las zonas con más incidentes reportados.</p>
-    <!-- Aquí puedes añadir un gráfico o mapa en el futuro -->
-</section>
-
 <!-- Nueva Sección de Crowdfunding -->
-<section class="crowdfunding-section">
+<section class="crowdfunding-section" id="crowdfunding">
     <h2>Participa en el Futuro de la Movilidad Urbana</h2>
     <p>Conviértete en parte de la CIMU contribuyendo a nuestro fondo de crowdfunding. Al apoyar este proyecto, ayudas a construir una plataforma de gestión de movilidad de la cual todos en Villavicencio pueden beneficiarse. ¡Invierte en el futuro de nuestra ciudad y forma parte de esta transformación!</p>
     <a href="#" class="donate-button">Haz tu Contribución</a>
 </section>
 
-<!-- Sección del Chatbot -->
-<section class="chatbot-section">
-    <h2>Asistente Virtual</h2>
-    <p>Interactúa con nuestro chatbot para obtener información sobre el tráfico, reportar problemas o recibir ayuda en tiempo real.</p>
-    <!-- Aquí puedes agregar un iframe o script para el chatbot en el futuro -->
-</section>
+<script>
+    // Animación de desplazamiento para las secciones
+    document.addEventListener("scroll", function() {
+        const sections = document.querySelectorAll(".section, .crowdfunding-section");
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                section.classList.add("visible");
+            }
+        });
+    });
+</script>
 
 <!-- Pie de página -->
 <footer>
@@ -156,3 +125,4 @@
 
 </body>
 </html>
+
