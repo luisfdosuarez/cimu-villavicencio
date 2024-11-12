@@ -14,6 +14,7 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            overflow-x: hidden;
         }
         header {
             background-color: #1e2330;
@@ -21,14 +22,17 @@
             padding: 20px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
         header h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 2em;
+            animation: slideIn 1.5s ease-in-out;
         }
         header p {
             margin: 5px 0 15px 0;
             font-style: italic;
+            animation: fadeIn 2s ease-in-out;
         }
         /* Logo Animado */
         .logo {
@@ -39,8 +43,12 @@
         }
         /* Efecto de aparición */
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
         /* Contenedores para gráficos */
         .data-section {
@@ -48,10 +56,12 @@
             padding: 40px 20px;
             text-align: center;
             transition: transform 0.3s ease;
+            margin: 30px 0;
         }
         .data-section h2 {
             font-size: 24px;
             color: #1e2330;
+            animation: fadeIn 1.5s ease-in-out;
         }
         /* Canvas para gráficos */
         .chart-container {
@@ -62,6 +72,10 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        .chart-container:hover {
+            transform: scale(1.05);
         }
         /* Botones interactivos */
         .cta-button {
@@ -73,10 +87,11 @@
             border-radius: 5px;
             margin-top: 15px;
             display: inline-block;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .cta-button:hover {
             background-color: #b95c05;
+            transform: scale(1.1);
         }
         /* Efectos de desplazamiento */
         .section {
@@ -193,3 +208,4 @@
 
 </body>
 </html>
+
