@@ -7,7 +7,7 @@
     <style>
         /* Estilos básicos */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -22,10 +22,15 @@
         }
         header h1 {
             margin: 0;
+            font-size: 1.8em;
+        }
+        header p {
+            margin: 5px 0 15px 0;
+            font-style: italic;
         }
         /* Logo Animado */
         .logo {
-            width: 150px; /* Ajusta el tamaño según sea necesario */
+            width: 100px;
             height: auto;
             animation: fadeIn 2s ease-in-out;
             margin-bottom: 10px;
@@ -35,10 +40,51 @@
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
-        /* Secciones con efectos de desplazamiento */
-        .section, .crowdfunding-section {
+        /* Contenedores para gráficos */
+        .data-section {
+            background-color: #f0f8ff;
             padding: 40px 20px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .data-section h2 {
+            font-size: 24px;
+            color: #1e2330;
+        }
+        .chart-placeholder {
+            width: 80%;
+            height: 300px;
+            background: linear-gradient(135deg, #89cff0, #639db8);
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        .chart-placeholder:hover {
+            transform: scale(1.05);
+        }
+        /* Botones interactivos */
+        .cta-button {
+            background-color: #d96c06;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #b95c05;
+        }
+        /* Efectos de desplazamiento */
+        .section {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -47,68 +93,55 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Botón de donación interactivo */
-        .donate-button {
-            background-color: #d96c06;
+        /* Pie de página */
+        footer {
+            background-color: #1e2330;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .donate-button:hover {
-            background-color: #b95c05;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <!-- Enlace directo al logo usando la URL de "raw" -->
     <img src="https://github.com/luisfdosuarez/cimu-villavicencio/raw/main/CIMU%20Transp.png" alt="Logo CIMU" class="logo">
     <h1>Central de Inteligencia de Movilidad Urbana (CIMU)</h1>
-    <p>Villavicencio</p>
+    <p>Transformando la Movilidad Urbana en Villavicencio</p>
 </header>
 
-<!-- Sección de Introducción -->
-<section class="section" id="intro">
-    <h2>Bienvenido a la CIMU de Villavicencio</h2>
-    <p>La CIMU es una iniciativa para optimizar la movilidad urbana en Villavicencio mediante el análisis de datos de tráfico en tiempo real. A través de esta plataforma, la Secretaría de Movilidad podrá tomar decisiones informadas que beneficien a todos los ciudadanos.</p>
+<!-- Sección de Bienvenida -->
+<section class="section data-section">
+    <h2>Bienvenido a la CIMU</h2>
+    <p>Conviértete en parte del futuro de la movilidad en Villavicencio. Descubre cómo la CIMU utiliza datos en tiempo real para transformar el tráfico y mejorar la seguridad vial.</p>
+    <a href="#" class="cta-button">Conoce más</a>
 </section>
 
-<!-- Sección de Funcionalidades -->
-<section class="section" id="features">
-    <h2>Funcionalidades Clave</h2>
-    <div class="features">
-        <div class="feature-box">
-            <h3>Monitoreo en Tiempo Real</h3>
-            <p>Visualiza la situación del tráfico en Villavicencio en tiempo real, identificando puntos de congestión y accidentes para una respuesta rápida.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Análisis de Datos Históricos</h3>
-            <p>Consulta y analiza datos históricos de tráfico para identificar patrones y mejorar la planificación urbana a largo plazo.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Alertas de Incidentes</h3>
-            <p>Recibe alertas sobre condiciones críticas como inundaciones o huecos en las vías para informar a los ciudadanos y tomar acciones preventivas.</p>
-        </div>
-    </div>
+<!-- Sección de Simulación de Gráficos de Datos -->
+<section class="section data-section" id="traffic-data">
+    <h2>Visualización de Datos de Tráfico</h2>
+    <div class="chart-placeholder">Gráfico de Tráfico en Tiempo Real (Simulado)</div>
+    <p>Observa los patrones de tráfico en tiempo real para tomar decisiones rápidas y mejorar la fluidez de la ciudad.</p>
 </section>
 
-<!-- Nueva Sección de Crowdfunding -->
-<section class="crowdfunding-section" id="crowdfunding">
-    <h2>Participa en el Futuro de la Movilidad Urbana</h2>
-    <p>Conviértete en parte de la CIMU contribuyendo a nuestro fondo de crowdfunding. Al apoyar este proyecto, ayudas a construir una plataforma de gestión de movilidad de la cual todos en Villavicencio pueden beneficiarse. ¡Invierte en el futuro de nuestra ciudad y forma parte de esta transformación!</p>
-    <a href="#" class="donate-button">Haz tu Contribución</a>
+<section class="section data-section" id="incident-data">
+    <h2>Alertas de Incidentes</h2>
+    <div class="chart-placeholder">Mapa de Incidentes Recientes (Simulado)</div>
+    <p>Recibe alertas sobre condiciones críticas en las vías, como inundaciones o huecos, y ayuda a mantener las rutas seguras.</p>
+</section>
+
+<!-- Sección de Crowdfunding Interactiva -->
+<section class="section data-section" id="crowdfunding">
+    <h2>Haz Parte de la CIMU</h2>
+    <p>Apoya la construcción de una Villavicencio más segura y moderna. Contribuye a nuestro fondo de crowdfunding y ayuda a mejorar la movilidad urbana.</p>
+    <a href="#" class="cta-button">Haz tu Contribución</a>
 </section>
 
 <script>
     // Animación de desplazamiento para las secciones
     document.addEventListener("scroll", function() {
-        const sections = document.querySelectorAll(".section, .crowdfunding-section");
+        const sections = document.querySelectorAll(".section");
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             if (rect.top < window.innerHeight - 50) {
@@ -120,9 +153,8 @@
 
 <!-- Pie de página -->
 <footer>
-    <p>© 2024 Secretaría de Movilidad de Villavicencio</p>
+    <p>© 2024 Secretaría de Movilidad de Villavicencio | Central de Inteligencia de Movilidad Urbana</p>
 </footer>
 
 </body>
 </html>
-
