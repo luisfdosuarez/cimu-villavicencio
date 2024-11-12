@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Inteligencia de Movilidad Urbana - Villavicencio</title>
+    <!-- Incluir Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Estilos básicos */
         body {
@@ -51,22 +53,15 @@
             font-size: 24px;
             color: #1e2330;
         }
-        .chart-placeholder {
+        /* Canvas para gráficos */
+        .chart-container {
             width: 80%;
-            height: 300px;
-            background: linear-gradient(135deg, #89cff0, #639db8);
-            color: white;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
+            max-width: 600px;
             margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease;
-        }
-        .chart-placeholder:hover {
-            transform: scale(1.05);
         }
         /* Botones interactivos */
         .cta-button {
@@ -118,24 +113,13 @@
     <a href="#" class="cta-button">Conoce más</a>
 </section>
 
-<!-- Sección de Simulación de Gráficos de Datos -->
+<!-- Sección de Visualización de Datos de Tráfico con Gráfico Interactivo -->
 <section class="section data-section" id="traffic-data">
     <h2>Visualización de Datos de Tráfico</h2>
-    <div class="chart-placeholder">Gráfico de Tráfico en Tiempo Real (Simulado)</div>
+    <div class="chart-container">
+        <canvas id="trafficChart"></canvas>
+    </div>
     <p>Observa los patrones de tráfico en tiempo real para tomar decisiones rápidas y mejorar la fluidez de la ciudad.</p>
-</section>
-
-<section class="section data-section" id="incident-data">
-    <h2>Alertas de Incidentes</h2>
-    <div class="chart-placeholder">Mapa de Incidentes Recientes (Simulado)</div>
-    <p>Recibe alertas sobre condiciones críticas en las vías, como inundaciones o huecos, y ayuda a mantener las rutas seguras.</p>
-</section>
-
-<!-- Sección de Crowdfunding Interactiva -->
-<section class="section data-section" id="crowdfunding">
-    <h2>Haz Parte de la CIMU</h2>
-    <p>Apoya la construcción de una Villavicencio más segura y moderna. Contribuye a nuestro fondo de crowdfunding y ayuda a mejorar la movilidad urbana.</p>
-    <a href="#" class="cta-button">Haz tu Contribución</a>
 </section>
 
 <script>
@@ -148,6 +132,57 @@
                 section.classList.add("visible");
             }
         });
+    });
+
+    // Configuración del gráfico interactivo de tráfico usando Chart.js
+    const ctx = document.getElementById('trafficChart').getContext('2d');
+    const trafficChart = new Chart(ctx, {
+        type: 'line', // Tipo de gráfico
+        data: {
+            labels: ['8 AM', '10 AM', '12 PM', '2 PM', '4 PM', '6 PM', '8 PM'],
+            datasets: [{
+                label: 'Nivel de Congestión (%)',
+                data: [30, 50, 70, 60, 80, 90, 50], // Datos simulados
+                borderColor: '#d96c06',
+                backgroundColor: 'rgba(217, 108, 6, 0.3)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Hora del Día'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Nivel de Congestión (%)'
+                    },
+                    min: 0,
+                    max: 100
+                }
+            }
+        }
     });
 </script>
 
