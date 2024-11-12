@@ -42,3 +42,31 @@ header p.lead {
     font-size: 1.25rem;
     margin-bottom: 0;
 }
+/* Estilo para el contenedor parallax */
+.parallax-container {
+    position: relative;
+    height: 100vh; /* Altura de la ventana gráfica */
+    background-image: url('../img/CIMU_COIN.jpg'); /* Primera imagen de fondo */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
+}
+
+/* Estilo para el contenido */
+.parallax-container .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.parallax-container .content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.parallax-container .content p {
+    font-size: 1.5rem;
+}
