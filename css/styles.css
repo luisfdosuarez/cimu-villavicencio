@@ -1,3 +1,19 @@
+.header {
+    background-color: #007bff; /* Color azul de fondo */
+    color: #ffffff; /* Color blanco del texto */
+    padding: 1rem 0; /* Espaciado vertical */
+}
+
+.header .logo {
+    width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+.header .site-title {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para el título */
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
 /* Estilos para el menú de navegación */
 .navbar {
     background-color: transparent;
