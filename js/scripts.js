@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('scroll', function () {
     const welcomeText = document.getElementById('welcomeText');
     const scrollPosition = window.scrollY;
@@ -10,3 +9,4 @@ document.addEventListener('scroll', function () {
         welcomeText.classList.remove('visible');
     }
 });
+
