@@ -2,45 +2,43 @@
 
 /* Estilo para el menú de navegación */
 .navbar {
-    background-color: #ffffff;
-    border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     padding: 10px 20px;
-    max-width: 1100px;
-    margin: 20px auto;
 }
 
 .navbar-brand {
     font-weight: bold;
     font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none; /* Quita el subrayado */
 }
 
-.navbar-brand img {
-    width: 30px;
-    height: auto;
-    margin-right: 8px;
-}
-
-.navbar-nav {
-    list-style: none; /* Quita los bullets */
-    padding-left: 0;
-}
-
-.navbar-nav .nav-link {
+.nav-link {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    color: #333;
-    text-decoration: none; /* Quita el subrayado */
 }
 
-.navbar-nav .nav-link.active {
-    color: #007bff;
+.nav-link.active {
+    color: #007bff; /* Color azul para el enlace activo */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #0056b3;
+.nav-link:hover {
+    color: #0056b3; /* Color azul más oscuro al pasar el cursor */
+}
+
+/* Estilo para la sección de bienvenida */
+header {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #ffffff; /* Texto blanco */
+    padding: 60px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+header p.lead {
+    font-size: 1.25rem;
+    margin-bottom: 0;
 }
