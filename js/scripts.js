@@ -22,8 +22,9 @@ document.addEventListener('scroll', function () {
         parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 200})`; // Aumenta el tamaño del texto gradualmente
 
         // Aumenta la opacidad del logo de Waze y el tamaño hasta 3x
-        wazeLogo.style.opacity = (scrollPosition - 100) / 700; // Gradualmente de 0 a 1
-        wazeLogo.style.transform = `scale(${1 + (scrollPosition - 100) / 350})`; // Aumenta el tamaño hasta 3x
+        const visibility = (scrollPosition - 100) / 700; // Calcula el nivel de visibilidad
+        wazeLogo.style.opacity = visibility; // Aparece gradualmente
+        wazeLogo.style.transform = `scale(${1 + 2 * visibility})`; // Crece de 1x a 3x de tamaño
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
@@ -47,7 +48,6 @@ document.addEventListener('scroll', function () {
         parallaxSection.classList.remove('black-background');
     }
 });
-
 
 // Configuración de la gráfica de tráfico de ejemplo
 document.addEventListener('DOMContentLoaded', function () {
