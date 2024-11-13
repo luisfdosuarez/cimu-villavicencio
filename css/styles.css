@@ -229,12 +229,13 @@
     background-color: #0056b3;
 }
 
-/* Estilos de la Sección de Videos */
+
+/* Estilos de la Sección de Video */
 .video-scroll-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background-color: #4B1DCC; /* Color de fondo inicial azul */
+    background-color: #4B1DCC; /* Fondo azul inicial */
     display: flex;
     align-items: center;
     justify-content: center;
