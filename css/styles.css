@@ -99,6 +99,7 @@
 
 
 /* Sección parallax texto*/
+
 .parallax-section {
     position: relative;
     height: 100vh; /* Ocupa toda la ventana */
@@ -130,5 +131,3 @@
 .parallax-section.black-background {
     background-color: black; /* Fondo cambia a negro */
 }
-
-
