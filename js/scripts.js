@@ -24,19 +24,20 @@ document.addEventListener('scroll', function () {
         // Aumenta la opacidad del logo de Waze y el tamaño hasta 3x
         const visibility = (scrollPosition - 100) / 700; // Calcula el nivel de visibilidad
         wazeLogo.style.opacity = visibility; // Aparece gradualmente
-        wazeLogo.style.transform = `translate(-50%, -50%) scale(${1 + 2 * visibility})`; // Crece de 1x a 3x de tamaño
+        wazeLogo.style.transform = `translateX(-50%) scale(${1 + 2 * visibility})`; // Crece de 1x a 3x de tamaño
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
         wazeLogo.style.opacity = 0; // Mantiene el logo invisible al inicio
-        wazeLogo.style.transform = 'translate(-50%, -50%) scale(1)'; // Restablece el tamaño y posición inicial del logo
+        wazeLogo.style.transform = 'translateX(-50%) scale(1)'; // Restablece el tamaño y posición inicial del logo
     } else if (scrollPosition >= 800 && scrollPosition < 1200) {
         wazeLogo.style.opacity = 1; // Logo completamente visible cuando el texto está totalmente ampliado
-        wazeLogo.style.transform = 'translate(-50%, -50%) scale(3)'; // Tamaño final 3x
+        wazeLogo.style.transform = 'translateX(-50%) scale(3)'; // Tamaño final 3x
     } else if (scrollPosition >= 1200) {
-        // Mueve el logo hacia la derecha para que desaparezca
-        wazeLogo.style.transform = 'translate(100%, -50%) scale(3)';
-        wazeLogo.style.opacity = 0; // Reduce la opacidad mientras se desplaza hacia la derecha
+        // Mueve el logo progresivamente hacia la derecha para que salga de la pantalla
+        const moveRight = (scrollPosition - 1200) / 5; // Ajusta el divisor para controlar la velocidad de salida
+        wazeLogo.style.transform = `translateX(${moveRight}px) scale(3)`;
+        wazeLogo.style.opacity = Math.max(1 - (scrollPosition - 1200) / 300, 0); // Reduce opacidad para que desaparezca gradualmente
     }
 
     // Cambia el fondo de la sección a azul cuando el texto alcanza un cierto tamaño
