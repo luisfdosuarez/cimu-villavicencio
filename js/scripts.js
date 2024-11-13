@@ -80,3 +80,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Seccion de videos
 
+document.addEventListener('DOMContentLoaded', function() {
+    const videoSections = document.querySelectorAll('.video-section');
+
+    videoSections.forEach((section, index) => {
+        const video = section.querySelector('video');
+        const text = section.querySelector('.overlay-text');
+
+        window.addEventListener('scroll', () => {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top <= windowHeight && rect.bottom >= 0) {
+                // Porcentaje de visibilidad de la sección
+                const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
+                const visibility = visibleHeight / windowHeight;
+
+                // Ajustar opacidad del video y color del texto
+                video.style.opacity = visibility;
+                text.style.color = `rgba(255, 255, 255, ${visibility})`;
+
+                // Mover el texto hacia arriba
+                const bottomPosition = 20 - (20 * visibility);
+                text.style.bottom = `${bottomPosition}%`;
+            }
+        });
+    });
+});
