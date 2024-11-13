@@ -57,15 +57,18 @@ document.addEventListener('scroll', function () {
 // Configuración de la gráfica de tráfico de ejemplo
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('trafficChart').getContext('2d');
-    const trafficChart = new Chart(ctx, {
+    let trafficChart;
+
+    // Configuración inicial de la gráfica sin datos (opcional para simular una entrada de izquierda a derecha)
+    const config = {
         type: 'line',
         data: {
             labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
             datasets: [{
                 label: 'Tránsito libre (vehículos)',
-                data: [120, 150, 170, 130, 180, 220, 160], // Datos inventados
-                borderColor: '#0056b3', // Color de línea azul profundo
-                backgroundColor: 'rgba(0, 86, 179, 0.2)', // Relleno semitransparente
+                data: [120, 150, 170, 130, 180, 220, 160], // Datos ficticios
+                borderColor: '#0056b3',
+                backgroundColor: 'rgba(0, 86, 179, 0.2)',
                 borderWidth: 2,
                 pointRadius: 3,
                 pointBackgroundColor: '#0056b3'
@@ -89,16 +92,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             animation: {
-                tension: {
-                    duration: 2000, // Duración de la animación de línea
-                    easing: 'easeInOutQuart', // Efecto de la animación
-                    from: 1,
-                    to: 0,
-                    loop: false
-                }
+                duration: 2000, // Duración de la animación
+                easing: 'easeInOutQuart' // Tipo de animación
             }
         }
-    });
+    };
+
+    // Función para iniciar la animación de la gráfica
+    function initializeChart() {
+        if (!trafficChart) { // Solo crea la gráfica una vez
+            trafficChart = new Chart(ctx, config);
+        }
+    }
+
+    // Intersection Observer para activar la animación al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                initializeChart(); // Inicia la animación cuando el gráfico entra en la vista
+            }
+        });
+    }, { threshold: 0.5 }); // Se activa cuando al menos el 50% de la sección está en vista
+
+    // Observa la sección de la gráfica
+    const trafficSection = document.querySelector('.traffic-data-section');
+    observer.observe(trafficSection);
 });
 
 
