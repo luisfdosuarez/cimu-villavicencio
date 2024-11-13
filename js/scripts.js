@@ -19,7 +19,7 @@ document.addEventListener('scroll', function () {
     // Calcula la opacidad y el tamaño del texto al hacer scroll
     if (scrollPosition > 100 && scrollPosition < 800) {
         parallaxText.style.opacity = 1;
-        parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 50})`; // Aumenta el tamaño del texto gradualmente
+        parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 150})`; // Aumenta el tamaño del texto gradualmente
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
