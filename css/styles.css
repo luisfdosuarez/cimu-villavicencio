@@ -121,7 +121,7 @@
     opacity: 1; /* Comienza con el texto visible */
     transform-origin: center; /* El crecimiento del texto se centra desde su origen */
     position: relative; /* Posición relativa para controlar la transformación */
-    transition: opacity 0.5s ease; /* Transición suave para ocultar el texto */
+    transition: opacity 1.0s ease; /* Transición suave para ocultar el texto */
 }
 
 /* Fondo de color azul cuando el texto ha crecido lo suficiente */
