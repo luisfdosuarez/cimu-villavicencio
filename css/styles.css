@@ -42,6 +42,11 @@
     transition: color 0.3s ease; /* Animación de cambio de color */
 }
 
+.nav-link i {
+    vertical-align: bottom; /* Alinea el ícono por la parte inferior */
+    margin-right: 5px; /* Añade un pequeño espacio entre el ícono y el texto */
+}
+
 /* Efecto hover: Cambia el color del texto y muestra una línea subrayada */
 .nav-link:hover {
     color: #0056b3; /* Cambia el color al pasar el cursor */
