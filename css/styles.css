@@ -100,20 +100,21 @@
 
 /* Sección parallax texto*/
 
+/* Sección parallax */
 .parallax-section {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Ocupa toda la ventana */
     background-color: white; /* Fondo blanco inicial */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease; /* Transición suave del fondo */
 }
 
 /* Estilo del texto */
 .parallax-text {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Tamaño inicial un poco más pequeño */
     color: #0056b3; /* Azul profundo */
     text-align: center;
     font-weight: bold;
