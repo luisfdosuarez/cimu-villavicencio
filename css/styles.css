@@ -161,64 +161,70 @@
     padding: 40px 0;
 }
 
-/* Estilos para cada tarjeta */
-.card {
-    background-color: #1c1c1e; /* Fondo oscuro para cada tarjeta */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+/* Estilo para la sección completa de tarjetas */
+.info-cards-section {
+    background-color: #4B1DCC; /* Fondo azul vibrante */
+    padding: 40px 0;
+}
+
+/* Contenedor de cada tarjeta con título y descripción */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 300px;
-    overflow: hidden;
+    text-align: center;
+}
+
+/* Estilo para el título de cada tarjeta (arriba de la tarjeta) */
+.card-title {
+    font-size: 1.2rem;
+    color: white; /* Texto en blanco */
+    margin-bottom: 15px;
+}
+
+/* Tarjeta vacía con fondo negro para colocar imagen en el futuro */
+.card {
+    background-color: #1c1c1e; /* Fondo negro */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 100%;
+    height: 200px; /* Altura fija para el cuadro vacío */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación al hacer hover */
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Desplaza hacia arriba al hacer hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Imagen en la tarjeta */
-.card-image {
-    width: 100%; /* Ancho completo de la tarjeta */
-    height: auto;
-    border-radius: 10px 10px 0 0; /* Bordes superiores redondeados */
-}
-
-/* Contenido de texto de la tarjeta */
-.card-content {
-    padding: 20px; /* Espacio interno para el texto */
-    text-align: center; /* Texto centrado */
-}
-
-.card-title {
-    font-size: 1.2rem;
-    color: white; /* Texto blanco */
-    margin-bottom: 10px;
-}
-
+/* Descripción debajo de la tarjeta */
 .card-description {
     font-size: 1rem;
     color: #ccc; /* Texto en gris claro */
+    margin-top: 15px;
+    padding: 0 10px;
 }
 
-/* Icono de acción "+" */
-.card-icon {
+/* Icono de acción "+" en la esquina inferior derecha del cuadro */
+.card::after {
+    content: "+";
     position: absolute;
     bottom: 15px;
     right: 15px;
-    background-color: #007bff; /* Fondo azul del icono */
-    color: white; /* Texto blanco */
+    background-color: #007bff;
+    color: white;
     font-size: 1.5rem;
-    border-radius: 50%; /* Forma circular */
+    border-radius: 50%;
     width: 35px;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease; /* Transición de color al hacer hover */
+    transition: background-color 0.3s ease;
 }
 
-.card-icon:hover {
-    background-color: #0056b3; /* Cambia de color al hacer hover */
+.card:hover::after {
+    background-color: #0056b3;
 }
-
