@@ -15,31 +15,32 @@
     margin: 0; /* Elimina márgenes adicionales */
 }
 
-/* Alineación del menú y estilo base */
+
 /* Alineación del menú y estilo base */
 .navbar-nav {
     margin-left: auto;
-    padding-left: 0;
 }
 
 .nav-link {
     font-size: 1rem;
     color: #333;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Animación de cambio de color */
+    display: inline-flex;
+    align-items: center; /* Asegura que el ícono y el texto estén centrados */
 }
 
-/* Efecto de hover en todas las opciones del menú */
+/* Cambia el color del texto en el hover */
 .nav-link:hover {
-    color: #0056b3; /* Cambia el color al pasar el cursor */
+    color: #0056b3;
 }
 
-/* Subrayado animado solo en el texto, sin afectar el ícono */
+/* Subrayado animado solo en el texto */
 .underline {
     position: relative;
     display: inline-block;
-    line-height: 1;
 }
 
 .underline::after {
@@ -60,9 +61,10 @@
     transform-origin: bottom left;
 }
 
-/* Alineación del ícono de la casa */
+/* Ajuste del tamaño y alineación del ícono */
 .bi-house {
-    vertical-align: bottom;
+    font-size: 1rem;
+    vertical-align: middle; /* Asegura que el ícono esté alineado con el texto */
 }
 
 .parallax-container {
