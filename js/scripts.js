@@ -80,3 +80,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Seccion de videos
 
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('backgroundVideo1');
+    const statusMessage = document.getElementById('statusMessage');
+
+    // Verificar si el video se ha cargado correctamente
+    video.oncanplay = function () {
+        statusMessage.textContent = "El video se ha cargado y está listo para reproducirse.";
+    };
+
+    video.onerror = function () {
+        statusMessage.textContent = "Error: No se pudo cargar el video. Verifica la ruta y el archivo.";
+    };
+
+    // Verificar el estado de reproducción
+    video.onplay = function () {
+        statusMessage.textContent = "El video se está reproduciendo correctamente.";
+    };
+
+    video.onpause = function () {
+        statusMessage.textContent = "El video está en pausa.";
+    };
+
+    // Forzar la reproducción del video cuando esté listo
+    video.play().catch(error => {
+        console.error("Error al intentar reproducir el video:", error);
+        statusMessage.textContent = "Error al intentar reproducir el video. Verifica la consola del navegador.";
+    });
+});
