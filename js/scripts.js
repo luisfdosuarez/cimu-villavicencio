@@ -80,21 +80,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Seccion de videos
 
-document.addEventListener('scroll', function () {
-    const video1 = document.getElementById('backgroundVideo1');
-    const text1 = document.getElementById('scrollText1');
-    const scrollPosition = window.scrollY;
-
-    // Mostrar el primer video y texto cuando se hace scroll entre 100 y 800px
-    if (scrollPosition > 100 && scrollPosition < 800) {
-        video1.style.opacity = 1; // Muestra el primer video
-        video1.play(); // Reproduce el video
-        text1.style.opacity = (scrollPosition - 100) / 700; // Incrementa opacidad del texto
-        text1.style.transform = `translateY(-${(scrollPosition - 100) / 10}%)`; // Desplaza el texto hacia arriba
-    } else {
-        video1.style.opacity = 0; // Oculta el video fuera de rango
-        video1.pause();
-        text1.style.opacity = 0; // Oculta el texto fuera de rango
-        text1.style.transform = 'translateY(0)'; // Restablece la posición del texto
-    }
-});
