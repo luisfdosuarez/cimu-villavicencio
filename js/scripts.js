@@ -107,4 +107,3 @@ document.addEventListener('scroll', function () {
         video2.style.opacity = 0;
     }
 });
-
