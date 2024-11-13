@@ -28,20 +28,19 @@
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    display: flex;
-    align-items: center; /* Asegura que el ícono y el texto estén centrados */
+    display: inline-flex;
+    align-items: center;
 }
 
-/* Efecto de hover en todas las opciones del menú */
+/* Cambia el color del texto en el hover */
 .nav-link:hover {
     color: #0056b3;
 }
 
-/* Subrayado animado solo en el texto, sin afectar el ícono */
+/* Subrayado animado para todas las opciones */
 .underline {
     position: relative;
     display: inline-block;
-    vertical-align: middle; /* Alinea la palabra "Home" con los otros enlaces */
 }
 
 .underline::after {
@@ -60,22 +59,6 @@
 .underline:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
-
-/* Ajuste del tamaño y alineación del ícono */
-.bi-house {
-    font-size: 1.2rem; /* Ajusta el tamaño del ícono para que coincida con el texto */
-    vertical-align: middle;
-}
-
-.parallax-container {
-    position: relative;
-    height: 100vh;
-    background-image: url('../img/Urban_traffic_map_stylized.png'); /* Verifica que la ruta sea correcta */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
 .parallax-container::before {
