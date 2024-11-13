@@ -37,12 +37,7 @@
     color: #0056b3;
 }
 
-/* Subrayado animado solo en el texto, sin afectar el ícono */
-.underline {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle; /* Alinea la palabra "Home" con los otros enlaces */
-}
+
 
 .underline::after {
     content: "";
@@ -62,11 +57,7 @@
     transform-origin: bottom left;
 }
 
-/* Ajuste del tamaño y alineación del ícono */
-.bi-house {
-    font-size: 1.2rem; /* Ajusta el tamaño del ícono para que coincida con el texto */
-    vertical-align: middle;
-}
+
 
 .parallax-container {
     position: relative;
