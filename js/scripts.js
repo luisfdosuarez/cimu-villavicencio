@@ -87,6 +87,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         text: 'Cantidad de vehículos'
                     }
                 }
+            },
+            animation: {
+                tension: {
+                    duration: 2000, // Duración de la animación de línea
+                    easing: 'easeInOutQuart', // Efecto de la animación
+                    from: 1,
+                    to: 0,
+                    loop: false
+                }
             }
         }
     });
