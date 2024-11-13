@@ -231,37 +231,21 @@
 
 
 /* Estilos de la Sección de Video */
+/* Sección de video sin efectos ni fondo adicional */
 .video-scroll-section {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Ajusta la altura de la sección al 100% de la ventana */
     overflow: hidden;
-    background-color: #4B1DCC; /* Fondo azul inicial */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* Video de Fondo */
+/* Video a pantalla completa */
 .background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0; /* Comienza oculto */
-    transition: opacity 1s ease; /* Transición suave para mostrar el video */
-    z-index: 0;
-}
-
-/* Texto animado */
-.scroll-text {
-    position: relative;
-    z-index: 1; /* Asegura que esté por encima del video */
-    font-size: 3rem;
-    color: white; /* Texto en blanco para contrastar */
-    opacity: 0; /* Comienza oculto */
-    transition: opacity 1s ease, transform 1s ease; /* Transición de opacidad y desplazamiento */
-    font-weight: bold;
-    text-align: center;
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
 }
