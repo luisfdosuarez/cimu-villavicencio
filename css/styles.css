@@ -267,3 +267,14 @@
     margin: 0;
     line-height: 1.2; /* Espaciado entre líneas */
 }
+
+
+.waze-logo {
+    position: absolute;
+    top: 60%; /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Tamaño recomendado; ajusta si es necesario */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 1s ease-in-out;
+}
