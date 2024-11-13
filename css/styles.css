@@ -99,37 +99,36 @@
 
 
 /* Sección parallax texto*/
-
-/* Estilo para la sección parallax, que ocupa toda la ventana y comienza con un fondo blanco */
 .parallax-section {
-    position: relative; /* Posición relativa para mantener el texto y otros elementos dentro */
-    height: 100vh; /* Altura igual a la ventana para ocupar toda la pantalla */
-    background-color: white; /* Color de fondo inicial */
-    display: flex; /* Alineación en el centro usando flexbox */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    overflow: hidden; /* Evita que el texto o los elementos se desborden de la sección */
-    transition: background-color 1s ease; /* Transición suave del fondo al cambiar de color */
+    position: relative;
+    height: 100vh; /* Ocupa toda la ventana */
+    background-color: white; /* Fondo blanco inicial */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 1s ease; /* Transición suave del fondo */
 }
 
-/* Estilo del texto dentro de la sección parallax */
+/* Estilo del texto */
 .parallax-text {
-    font-size: 3rem; /* Tamaño inicial del texto */
-    color: #0056b3; /* Color del texto en azul profundo */
-    text-align: center; /* Centra el texto */
-    font-weight: bold; /* Texto en negrita */
-    opacity: 1; /* Comienza con el texto visible */
-    transform-origin: center; /* El crecimiento del texto se centra desde su origen */
-    position: relative; /* Posición relativa para controlar la transformación */
-    transition: opacity 1.0s ease; /* Transición suave para ocultar el texto */
+    font-size: 2rem;
+    color: #0056b3; /* Azul profundo */
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 1s ease; /* Suaviza la aparición y el aumento de tamaño */
+    transform-origin: center;
+    position: relative;
 }
 
-/* Fondo de color azul cuando el texto ha crecido lo suficiente */
+/* Efecto de transformación cuando el texto está en el centro */
 .parallax-section.blue-background {
-    background-color: #0056b3; /* Cambia el fondo a azul */
+    background-color: #0056b3; /* Fondo cambia a azul */
 }
 
-/* Fondo de color negro como fase final */
 .parallax-section.black-background {
-    background-color: black; /* Cambia el fondo a negro */
+    background-color: black; /* Fondo cambia a negro */
 }
+
+
