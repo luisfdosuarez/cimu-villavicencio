@@ -102,13 +102,13 @@
 
 .parallax-section {
     position: relative;
-    height: 100vh; /* Ocupa toda la ventana */
+    height: 100vh;
     background-color: white; /* Fondo blanco inicial */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: background-color 1s ease; /* Transición suave del fondo */
+    transition: background-color 1s ease;
 }
 
 /* Estilo del texto */
@@ -118,16 +118,16 @@
     text-align: center;
     font-weight: bold;
     opacity: 0;
-    transition: opacity 0.5s ease, transform 1s ease; /* Suaviza la aparición y el aumento de tamaño */
+    transition: opacity 0.5s ease;
     transform-origin: center;
     position: relative;
 }
 
-/* Efecto de transformación cuando el texto está en el centro */
+/* Colores de fondo de la sección */
 .parallax-section.blue-background {
-    background-color: #0056b3; /* Fondo cambia a azul */
+    background-color: #0056b3; /* Fondo azul */
 }
 
 .parallax-section.black-background {
-    background-color: black; /* Fondo cambia a negro */
+    background-color: black; /* Fondo negro */
 }
