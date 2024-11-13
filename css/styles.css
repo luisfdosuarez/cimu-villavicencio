@@ -229,16 +229,18 @@
     background-color: #0056b3;
 }
 
-/* Sección de videos */
+/* Estilos de la Sección de Videos */
 .video-scroll-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background-color: #4B1DCC; /* Fondo azul */
-    transition: background-color 1s ease;
+    background-color: #4B1DCC; /* Color de fondo inicial azul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Video de fondo */
+/* Video de Fondo */
 .background-video {
     position: absolute;
     top: 0;
@@ -247,18 +249,18 @@
     height: 100%;
     object-fit: cover;
     opacity: 0; /* Comienza oculto */
-    transition: opacity 1s ease;
+    transition: opacity 1s ease; /* Transición suave para mostrar el video */
+    z-index: 0;
 }
 
 /* Texto animado */
 .scroll-text {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    z-index: 1; /* Asegura que esté por encima del video */
     font-size: 3rem;
-    color: rgba(255, 255, 255, 0); /* Comienza transparente */
-    transition: color 1s ease, transform 1s ease;
+    color: white; /* Texto en blanco para contrastar */
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 1s ease, transform 1s ease; /* Transición de opacidad y desplazamiento */
     font-weight: bold;
     text-align: center;
 }
