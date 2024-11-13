@@ -43,6 +43,16 @@
     color: #0056b3; /* Cambia el color al pasar el cursor */
 }
 
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+
 .parallax-container {
     position: relative;
     height: 100vh;
