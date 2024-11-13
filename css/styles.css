@@ -231,21 +231,19 @@
 
 
 /* Estilos de la Sección de Video */
-/* Sección de video sin efectos ni fondo adicional */
 .video-scroll-section {
     position: relative;
-    height: 100vh; /* Ajusta la altura de la sección al 100% de la ventana */
+    height: 100vh;
     overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
-/* Video a pantalla completa */
 .background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+    object-fit: cover;
 }
