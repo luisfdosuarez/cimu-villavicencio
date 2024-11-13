@@ -34,10 +34,10 @@ document.addEventListener('scroll', function () {
         wazeLogo.style.opacity = 1; // Logo completamente visible cuando el texto está totalmente ampliado
         wazeLogo.style.transform = 'translateX(-50%) scale(3)'; // Tamaño final 3x
     } else if (scrollPosition >= 1200) {
-        // Mueve el logo progresivamente hacia la derecha para que salga de la pantalla
-        const moveRight = (scrollPosition - 1200) / 5; // Ajusta el divisor para controlar la velocidad de salida
+        // Mueve el logo rápidamente hacia la derecha para que salga de la pantalla
+        const moveRight = (scrollPosition - 1200) * 2; // Multiplica por un valor mayor para acelerar
         wazeLogo.style.transform = `translateX(${moveRight}px) scale(3)`;
-        wazeLogo.style.opacity = Math.max(1 - (scrollPosition - 1200) / 300, 0); // Reduce opacidad para que desaparezca gradualmente
+        wazeLogo.style.opacity = Math.max(1 - (scrollPosition - 1200) / 150, 0); // Reduce opacidad más rápido para desaparecer
     }
 
     // Cambia el fondo de la sección a azul cuando el texto alcanza un cierto tamaño
