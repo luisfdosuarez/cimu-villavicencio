@@ -153,3 +153,72 @@
     text-align: left;
     font-family: Arial, sans-serif; /* Fuente similar a la de la frase saliente */
 }
+
+
+/* Estilo para la sección completa de tarjetas */
+.info-cards-section {
+    background-color: #4B1DCC; /* Fondo azul vibrante */
+    padding: 40px 0;
+}
+
+/* Estilos para cada tarjeta */
+.card {
+    background-color: #1c1c1e; /* Fondo oscuro para cada tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación al hacer hover */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Desplaza hacia arriba al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
+}
+
+/* Imagen en la tarjeta */
+.card-image {
+    width: 100%; /* Ancho completo de la tarjeta */
+    height: auto;
+    border-radius: 10px 10px 0 0; /* Bordes superiores redondeados */
+}
+
+/* Contenido de texto de la tarjeta */
+.card-content {
+    padding: 20px; /* Espacio interno para el texto */
+    text-align: center; /* Texto centrado */
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: white; /* Texto blanco */
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #ccc; /* Texto en gris claro */
+}
+
+/* Icono de acción "+" */
+.card-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #007bff; /* Fondo azul del icono */
+    color: white; /* Texto blanco */
+    font-size: 1.5rem;
+    border-radius: 50%; /* Forma circular */
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; /* Transición de color al hacer hover */
+}
+
+.card-icon:hover {
+    background-color: #0056b3; /* Cambia de color al hacer hover */
+}
+
