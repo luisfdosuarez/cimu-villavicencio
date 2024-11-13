@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Seccion de videos
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const videoSections = document.querySelectorAll('.video-section');
 
@@ -101,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 text.style.color = `rgba(255, 255, 255, ${visibility})`;
 
                 // Mover el texto hacia arriba
-                const bottomPosition = 20 - (20 * visibility);
-                text.style.bottom = `${bottomPosition}%`;
+                const translateY = 20 - (20 * visibility);
+                text.style.transform = `translate(-50%, -${translateY}%)`;
             }
         });
     });
