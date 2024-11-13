@@ -58,7 +58,6 @@
 }
 
 
-
 .parallax-container {
     position: relative;
     height: 100vh;
@@ -80,22 +79,6 @@
     z-index: 1; /* Coloca la superposición detrás del texto */
 }
 
-.welcome-text {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 2; /* Asegura que el texto esté por encima de la superposición */
-}
-
-.welcome-text.visible {
-    opacity: 1;
-}
 
 /* Sección parallax */
 .parallax-section {
@@ -129,4 +112,25 @@
 .parallax-section.black-background {
     background-color: black; /* Fondo cambia a negro */
 }
+
+
+
+
+.welcome-text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 2; /* Asegura que el texto esté por encima de la superposición */
+}
+
+.welcome-text.visible {
+    opacity: 1;
+}
+
 
