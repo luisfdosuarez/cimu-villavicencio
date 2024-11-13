@@ -38,6 +38,7 @@
 .underline {
     position: relative;
     display: inline-block;
+    line-height: 1;
 }
 
 .underline::after {
