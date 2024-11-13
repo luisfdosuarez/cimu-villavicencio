@@ -87,28 +87,28 @@ document.addEventListener('scroll', function () {
     const text2 = document.getElementById('scrollText2');
     const scrollPosition = window.scrollY;
 
-    // Configuración para el primer video y texto
+    // Control para el primer video y texto
     if (scrollPosition > 200 && scrollPosition < 1000) {
-        if (video1.paused) video1.play(); // Reproduce el video si está pausado
-        video1.style.opacity = 1; // Muestra el video gradualmente
-        text1.style.color = `rgba(255, 255, 255, ${(scrollPosition - 200) / 800})`; // Aumenta la opacidad del texto
+        video1.style.opacity = 1; // Muestra el primer video
+        video1.play(); // Reproduce el video
+        text1.style.color = `rgba(255, 255, 255, ${(scrollPosition - 200) / 800})`; // Incrementa opacidad del texto
         text1.style.transform = `translate(-50%, -${(scrollPosition - 200) / 8}%)`; // Desplaza el texto hacia arriba
     } else {
-        video1.pause(); // Pausa el video si se sale del rango
-        video1.style.opacity = 0; // Oculta el video
+        video1.style.opacity = 0; // Oculta el video fuera de rango
+        video1.pause();
         text1.style.color = 'rgba(255, 255, 255, 0)'; // Oculta el texto
         text1.style.transform = 'translate(-50%, 0)'; // Restablece la posición del texto
     }
 
-    // Configuración para el segundo video y texto
+    // Control para el segundo video y texto
     if (scrollPosition >= 1000 && scrollPosition < 1800) {
-        if (video2.paused) video2.play(); // Reproduce el segundo video si está pausado
-        video2.style.opacity = 1; // Muestra el segundo video gradualmente
-        text2.style.color = `rgba(255, 255, 255, ${(scrollPosition - 1000) / 800})`; // Aumenta la opacidad del texto
+        video2.style.opacity = 1; // Muestra el segundo video
+        video2.play(); // Reproduce el video
+        text2.style.color = `rgba(255, 255, 255, ${(scrollPosition - 1000) / 800})`; // Incrementa opacidad del texto
         text2.style.transform = `translate(-50%, -${(scrollPosition - 1000) / 8}%)`; // Desplaza el texto hacia arriba
     } else {
-        video2.pause(); // Pausa el segundo video si se sale del rango
-        video2.style.opacity = 0; // Oculta el segundo video
+        video2.style.opacity = 0; // Oculta el video fuera de rango
+        video2.pause();
         text2.style.color = 'rgba(255, 255, 255, 0)'; // Oculta el texto
         text2.style.transform = 'translate(-50%, 0)'; // Restablece la posición del texto
     }
