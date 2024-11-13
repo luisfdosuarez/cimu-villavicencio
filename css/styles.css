@@ -136,11 +136,20 @@
     background-color: #f8f9fa; /* Fondo claro */
 }
 
+/* Contenedor de la gráfica con borde redondeado y fondo negro */
+.chart-container {
+    background-color: #000; /* Fondo negro para el contenedor */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    width: 420px; /* Ancho fijo para el contenedor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+/* Estilos para el texto "El poder de los datos" */
 .data-power-text h2 {
     font-size: 2rem;
-    color: #0056b3; /* Azul profundo, igual que el texto de la parallax */
+    color: #ffffff; /* Texto en blanco */
     font-weight: bold;
     text-align: left;
     font-family: Arial, sans-serif; /* Fuente similar a la de la frase saliente */
 }
-
