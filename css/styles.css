@@ -15,85 +15,32 @@
     margin: 0; /* Elimina márgenes adicionales */
 }
 
-/* Estilos para el menú de navegación */
-.navbar {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.navbar-nav {
-    margin-left: auto;
-    padding-left: 0;
-}
-
-.nav-item {
-    list-style: none; /* Elimina los bullets de los elementos de la lista */
-}
-
-/* Efecto de hover para las opciones del menú */
+/* Estilo base para las opciones del menú */
 .nav-link {
     font-size: 1rem;
     color: #333;
     padding: 0.5rem 1rem;
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
     position: relative;
-    transition: color 0.3s ease; /* Animación de cambio de color */
+    transition: color 0.3s ease;
 }
 
-.nav-link i {
-    vertical-align: bottom; /* Alinea el ícono por la parte inferior */
-    margin-right: 5px; /* Añade un pequeño espacio entre el ícono y el texto */
-}
-
-/* Efecto hover: Cambia el color del texto y muestra una línea subrayada */
 .nav-link:hover {
-    color: #0056b3; /* Cambia el color al pasar el cursor */
-}
-
-/* Línea subrayada animada */
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #0056b3;
-    transform: scaleX(0); /* La línea está oculta por defecto */
-    transform-origin: bottom right;
-    transition: transform 0.3s ease; /* Animación de la línea */
-}
-
-/* Muestra la línea subrayada en el hover */
-.nav-link:hover::after {
-    transform: scaleX(1); /* Expande la línea en el hover */
-    transform-origin: bottom left;
-}
-
-/* Alineación del menú */
-.navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-nav .nav-link {
-    display: flex;
-    align-items: center;
+    color: #0056b3;
 }
 
 /* Línea subrayada animada solo en el texto "Home" */
 .underline {
     position: relative;
     display: inline-block;
+    line-height: 1; /* Ajusta la línea base para el subrayado */
 }
 
 .underline::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -2px; /* Ajusta la distancia del subrayado para alinearlo */
     width: 100%;
     height: 2px;
     background-color: #0056b3;
@@ -106,7 +53,6 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
 
 .parallax-container {
     position: relative;
