@@ -136,7 +136,7 @@
     background-color: #f8f9fa; /* Fondo claro */
 }
 
-/* Contenedor de la gráfica con borde redondeado y fondo negro */
+/* Contenedor de la gráfica con borde redondeado y fondo amarill */
 .chart-container {
     background-color: #FFFF00; /* Fondo amarillo para el contenedor */
     border-radius: 15px; /* Bordes redondeados */
@@ -147,7 +147,7 @@
 
 /* Estilos para el texto "El poder de los datos" */
 .data-power-text h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #0056b3; /* Texto en azul */
     font-weight: bold;
     text-align: left;
