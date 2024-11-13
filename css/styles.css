@@ -131,4 +131,16 @@
     background-color: black; /* Fondo cambia a negro */
 }
 
+/* Estilos para la sección de datos de tráfico */
+.traffic-data-section {
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+.data-power-text h2 {
+    font-size: 2rem;
+    color: #0056b3; /* Azul profundo, igual que el texto de la parallax */
+    font-weight: bold;
+    text-align: left;
+    font-family: Arial, sans-serif; /* Fuente similar a la de la frase saliente */
+}
 
