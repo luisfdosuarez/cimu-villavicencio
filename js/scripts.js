@@ -27,7 +27,7 @@ document.addEventListener('scroll', function () {
     // A medida que el usuario hace scroll, el texto crece en tamaño
     else if (scrollPosition >= 800 && scrollPosition < 1800) {
         // scaleFactor controla el tamaño del texto, con el divisor afectando la velocidad de crecimiento
-        const scaleFactor = 1 + (scrollPosition - 800) / 100; // Crece más rápido si el divisor es menor
+        const scaleFactor = 1 + (scrollPosition - 800) / 50; // Crece más rápido si el divisor es menor
         parallaxText.style.transform = `scale(${scaleFactor})`; // Aplica el tamaño calculado
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de entrar en la sección
