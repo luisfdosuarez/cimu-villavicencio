@@ -77,3 +77,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('scroll', function () {
+    const video1 = document.getElementById('backgroundVideo1');
+    const text1 = document.getElementById('scrollText1');
+    const video2 = document.getElementById('backgroundVideo2');
+    const text2 = document.getElementById('scrollText2');
+    const scrollPosition = window.scrollY;
+
+    // Control del primer video y texto
+    if (scrollPosition > 100 && scrollPosition < 800) {
+        video1.play(); // Reproduce el video
+        video1.style.opacity = 1; // Muestra el video gradualmente
+        text1.style.color = `rgba(255, 255, 255, ${(scrollPosition - 100) / 700})`; // Aumenta la opacidad del texto
+        text1.style.transform = `translate(-50%, -${(scrollPosition - 100) / 5}%)`; // Desplaza el texto hacia arriba
+    } else if (scrollPosition >= 800 && scrollPosition < 1600) {
+        video1.pause(); // Pausa el video si se detiene el scroll en esta sección
+        video1.style.opacity = 0; // Oculta el primer video
+    }
+
+    // Control del segundo video y texto
+    if (scrollPosition >= 1600 && scrollPosition < 2400) {
+        video2.play();
+        video2.style.opacity = 1;
+        text2.style.color = `rgba(255, 255, 255, ${(scrollPosition - 1600) / 800})`;
+        text2.style.transform = `translate(-50%, -${(scrollPosition - 1600) / 5}%)`;
+    } else if (scrollPosition >= 2400) {
+        video2.pause();
+        video2.style.opacity = 0;
+    }
+});
+
