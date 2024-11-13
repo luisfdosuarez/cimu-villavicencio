@@ -232,22 +232,3 @@
 
 /* Estilos de la Sección de Video */
 
-/* Estilos para la sección de video */
-.video-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000; /* Fondo negro */
-    margin: 0;
-    padding: 0;
-}
-
-.video-section video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
