@@ -19,7 +19,7 @@ document.addEventListener('scroll', function () {
     // Calcula la opacidad y el tamaño del texto al hacer scroll
     if (scrollPosition > 100 && scrollPosition < 800) {
         parallaxText.style.opacity = 1;
-        parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 150})`; // Aumenta el tamaño del texto gradualmente
+        parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 200})`; // Aumenta el tamaño del texto gradualmente
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
@@ -37,4 +37,43 @@ document.addEventListener('scroll', function () {
         parallaxSection.classList.remove('blue-background');
         parallaxSection.classList.remove('black-background');
     }
+});
+
+
+// Configuración de la gráfica de tráfico de ejemplo
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('trafficChart').getContext('2d');
+    const trafficChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+            datasets: [{
+                label: 'Tránsito libre (vehículos)',
+                data: [120, 150, 170, 130, 180, 220, 160], // Datos inventados
+                borderColor: '#0056b3', // Color de línea azul profundo
+                backgroundColor: 'rgba(0, 86, 179, 0.2)', // Relleno semitransparente
+                borderWidth: 2,
+                pointRadius: 3,
+                pointBackgroundColor: '#0056b3'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Día de la semana'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Cantidad de vehículos'
+                    }
+                }
+            }
+        }
+    });
 });
