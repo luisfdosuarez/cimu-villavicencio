@@ -84,26 +84,37 @@ document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('backgroundVideo1');
     const statusMessage = document.getElementById('statusMessage');
 
+    console.log("Script ejecutado: verificando video...");
+
+    // Mensaje inicial para confirmar que el script se ejecuta
+    statusMessage.textContent = "Verificando si el video está listo...";
+
     // Verificar si el video se ha cargado correctamente
     video.oncanplay = function () {
+        console.log("El video se ha cargado y está listo para reproducirse.");
         statusMessage.textContent = "El video se ha cargado y está listo para reproducirse.";
     };
 
     video.onerror = function () {
+        console.error("Error: No se pudo cargar el video. Verifica la ruta y el archivo.");
         statusMessage.textContent = "Error: No se pudo cargar el video. Verifica la ruta y el archivo.";
     };
 
     // Verificar el estado de reproducción
     video.onplay = function () {
+        console.log("El video se está reproduciendo correctamente.");
         statusMessage.textContent = "El video se está reproduciendo correctamente.";
     };
 
     video.onpause = function () {
+        console.log("El video está en pausa.");
         statusMessage.textContent = "El video está en pausa.";
     };
 
     // Forzar la reproducción del video cuando esté listo
-    video.play().catch(error => {
+    video.play().then(() => {
+        console.log("Intento de reproducción del video exitoso.");
+    }).catch(error => {
         console.error("Error al intentar reproducir el video:", error);
         statusMessage.textContent = "Error al intentar reproducir el video. Verifica la consola del navegador.";
     });
