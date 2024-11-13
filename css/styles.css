@@ -15,45 +15,74 @@
     margin: 0; /* Elimina márgenes adicionales */
 }
 
-/* Estilo base para las opciones del menú */
+/* Estilos para el menú de navegación */
+.navbar {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Alinea el menú a la derecha */
+.navbar-nav {
+    margin-left: auto;
+    padding-left: 0;
+}
+
+.nav-item {
+    list-style: none; /* Elimina los bullets de los elementos de la lista */
+}
+
+/* Efecto de hover para todas las opciones del menú */
 .nav-link {
     font-size: 1rem;
     color: #333;
     padding: 0.5rem 1rem;
-    text-decoration: none;
+    text-decoration: none; /* Elimina el subrayado */
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Animación de cambio de color */
 }
 
+/* Cambia el color del texto al pasar el cursor */
 .nav-link:hover {
     color: #0056b3;
 }
 
-/* Línea subrayada animada solo en el texto "Home" */
-.underline {
-    position: relative;
-    display: inline-block;
-    line-height: 1; /* Ajusta la línea base para el subrayado */
-}
-
-.underline::after {
+/* Línea subrayada animada para todas las opciones */
+.nav-link::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px; /* Ajusta la distancia del subrayado para alinearlo */
+    bottom: -2px; /* Ajusta la distancia del subrayado */
     width: 100%;
     height: 2px;
     background-color: #0056b3;
-    transform: scaleX(0);
+    transform: scaleX(0); /* La línea está oculta por defecto */
     transform-origin: bottom right;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Animación de la línea */
 }
 
-.underline:hover::after {
-    transform: scaleX(1);
+.nav-link:hover::after {
+    transform: scaleX(1); /* Expande la línea en el hover */
     transform-origin: bottom left;
 }
 
+/* Alineación específica para la opción "Home" con ícono */
+.nav-link .bi-house {
+    vertical-align: bottom; /* Alinea el ícono de la casa con el texto */
+    margin-right: 5px; /* Añade un pequeño espacio entre el ícono y el texto */
+}
+
+/* Asegura que todas las opciones estén centradas verticalmente */
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+}
 .parallax-container {
     position: relative;
     height: 100vh;
