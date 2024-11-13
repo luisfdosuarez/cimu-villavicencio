@@ -10,19 +10,25 @@ document.addEventListener('scroll', function () {
 });
 
 
-
 document.addEventListener('scroll', function () {
     const parallaxSection = document.querySelector('.parallax-section');
     const parallaxText = document.getElementById('parallaxText');
+    const wazeLogo = document.getElementById('wazeLogo');
     const scrollPosition = window.scrollY;
 
     // Calcula la opacidad y el tamaño del texto al hacer scroll
     if (scrollPosition > 100 && scrollPosition < 800) {
         parallaxText.style.opacity = 1;
         parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 200})`; // Aumenta el tamaño del texto gradualmente
+
+        // Aumenta la opacidad del logo de Waze a medida que el texto se expande
+        wazeLogo.style.opacity = (scrollPosition - 100) / 700; // Gradualmente de 0 a 1
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
+        wazeLogo.style.opacity = 0; // Mantiene el logo invisible al inicio
+    } else if (scrollPosition >= 800) {
+        wazeLogo.style.opacity = 1; // Logo completamente visible cuando el texto está totalmente ampliado
     }
 
     // Cambia el fondo de la sección a azul cuando el texto alcanza un cierto tamaño
@@ -77,6 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
 
 // Seccion de videos
 
