@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const config = {
         type: 'line',
         data: {
-            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+            labels: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
             datasets: [{
                 label: 'Tránsito libre (vehículos)',
                 data: [120, 150, 170, 130, 180, 220, 160], // Datos ficticios
