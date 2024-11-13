@@ -114,13 +114,13 @@
 
 /* Estilo del texto */
 .parallax-text {
-    font-size: 1.5rem; /* Tamaño inicial un poco más pequeño */
+    font-size: 3rem; /* Tamaño inicial más grande */
     color: #0056b3; /* Azul profundo */
     text-align: center;
     font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: 1;
     transform-origin: center;
+    transition: opacity 0.5s ease;
     position: relative;
 }
 
