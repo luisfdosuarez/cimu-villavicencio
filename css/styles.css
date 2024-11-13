@@ -32,26 +32,51 @@
     list-style: none; /* Elimina los bullets de los elementos de la lista */
 }
 
+/* Efecto de hover para las opciones del menú */
 .nav-link {
     font-size: 1rem;
     color: #333;
     padding: 0.5rem 1rem;
     text-decoration: none; /* Elimina el subrayado */
+    position: relative;
+    transition: color 0.3s ease; /* Animación de cambio de color */
 }
 
+/* Efecto hover: Cambia el color del texto y muestra una línea subrayada */
 .nav-link:hover {
     color: #0056b3; /* Cambia el color al pasar el cursor */
 }
 
+/* Línea subrayada animada */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0056b3;
+    transform: scaleX(0); /* La línea está oculta por defecto */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; /* Animación de la línea */
+}
+
+/* Muestra la línea subrayada en el hover */
+.nav-link:hover::after {
+    transform: scaleX(1); /* Expande la línea en el hover */
+    transform-origin: bottom left;
+}
+
+/* Alineación del menú */
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
 }
+
 .navbar-nav .nav-link {
     display: flex;
     align-items: center;
 }
-
 
 .parallax-container {
     position: relative;
