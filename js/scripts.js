@@ -16,21 +16,27 @@ document.addEventListener('scroll', function () {
     const parallaxText = document.getElementById('parallaxText');
     const scrollPosition = window.scrollY;
 
-    // Calcula la opacidad y el tamaño del texto al hacer scroll
+    // Fase 1: Subida y aparición del texto en el centro
     if (scrollPosition > 100 && scrollPosition < 800) {
         parallaxText.style.opacity = 1;
-        parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 200})`; // Aumenta el tamaño del texto gradualmente
-    } else if (scrollPosition < 100) {
-        parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
-        parallaxText.style.transform = 'scale(1)';
+        parallaxText.style.transform = 'scale(0.8)'; // Tamaño inicial ligeramente más pequeño
     }
 
-    // Cambia el fondo de la sección a azul cuando el texto alcanza un cierto tamaño
-    if (scrollPosition >= 500 && scrollPosition < 1200) {
+    // Fase 2: Crecimiento gradual del texto al hacer scroll
+    else if (scrollPosition >= 800 && scrollPosition < 2000) {
+        const scaleFactor = 0.8 + (scrollPosition - 800) / 600; // Ajuste gradual, inicia en 0.8 y crece
+        parallaxText.style.transform = `scale(${scaleFactor})`;
+    } else if (scrollPosition < 100) {
+        parallaxText.style.opacity = 0;
+        parallaxText.style.transform = 'scale(0.8)';
+    }
+
+    // Fase 3: Fondo cambia al color del texto cuando este alcanza gran tamaño
+    if (scrollPosition >= 1600 && scrollPosition < 2500) {
         parallaxSection.classList.add('blue-background');
         parallaxSection.classList.remove('black-background');
-    } else if (scrollPosition >= 1200) {
-        // Cambia el fondo a negro cuando se sigue haciendo scroll
+    } else if (scrollPosition >= 2500) {
+        // Fase 4: Transición a negro
         parallaxSection.classList.remove('blue-background');
         parallaxSection.classList.add('black-background');
     } else {
