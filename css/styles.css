@@ -259,14 +259,11 @@
     color: rgba(255, 255, 255, 0); /* Texto inicialmente transparente */
     transition: color 1s ease-in-out, bottom 1s ease-in-out; /* Transiciones suaves */
     text-align: center;
+    width: 80%; /* Ajusta el ancho según sea necesario */
 }
 
 .overlay-text h2 {
     font-size: 2.5rem;
     margin: 0;
-}
-
-.overlay-text p {
-    font-size: 1.2rem;
-    margin: 0;
+    line-height: 1.2; /* Espaciado entre líneas */
 }
