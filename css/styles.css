@@ -58,6 +58,7 @@
 }
 
 
+
 .parallax-container {
     position: relative;
     height: 100vh;
@@ -79,43 +80,6 @@
     z-index: 1; /* Coloca la superposición detrás del texto */
 }
 
-
-/* Sección parallax */
-.parallax-section {
-    position: relative;
-    height: 100vh; /* Ocupa toda la ventana */
-    background-color: white; /* Fondo blanco inicial */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition: background-color 1s ease; /* Transición suave del fondo */
-}
-
-/* Estilo del texto */
-.parallax-text {
-    font-size: 2rem;
-    color: #0056b3; /* Azul profundo */
-    text-align: center;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 1s ease; /* Suaviza la aparición y el aumento de tamaño */
-    transform-origin: center;
-    position: relative;
-}
-
-/* Efecto de transformación cuando el texto está en el centro */
-.parallax-section.blue-background {
-    background-color: #0056b3; /* Fondo cambia a azul */
-}
-
-.parallax-section.black-background {
-    background-color: black; /* Fondo cambia a negro */
-}
-
-
-
-
 .welcome-text {
     position: relative;
     top: 50%;
@@ -132,5 +96,3 @@
 .welcome-text.visible {
     opacity: 1;
 }
-
-
