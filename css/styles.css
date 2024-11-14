@@ -296,14 +296,15 @@
     background-color: #FFD700; /* Fondo amarillo */
     color: #000; /* Letra negra */
     padding: 10px 20px; /* Espaciado interno */
-    border: none;
+    border: none; /* Sin borde inicialmente */
     border-radius: 50px; /* Hace el botón ovalado */
     font-size: 16px; /* Tamaño de letra */
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición para el efecto de hover */
+    transition: background-color 0.3s ease, border 0.3s ease; /* Transiciones para fondo y borde */
 }
 
 .oval-button:hover {
     background-color: #E6BE00; /* Fondo amarillo más oscuro al hacer hover */
+    border: 2px solid #000; /* Borde negro al hacer hover */
 }
