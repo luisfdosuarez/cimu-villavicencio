@@ -273,8 +273,10 @@
     position: absolute;
     top: 60%; /* Ajusta según sea necesario */
     left: 50%;
-    transform: translateX(-50%) scale(1); /* Posición inicial centrada y escala */
-    width: 80px; /* Tamaño inicial del logo */
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Asegura que no exceda el tamaño del contenedor */
+    width: 300px; /* Ajusta el tamaño aquí según lo necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
     opacity: 0; /* Inicia invisible */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones de opacidad y tamaño */
+    transition: opacity 0.5s ease; /* Solo transición de opacidad */
 }
