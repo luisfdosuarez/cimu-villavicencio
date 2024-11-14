@@ -273,9 +273,8 @@
     position: absolute;
     top: 60%; /* Ajusta según sea necesario */
     left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%; /* Asegura que no exceda el tamaño del contenedor */
-    width: 300px; /* Ajusta el tamaño aquí según lo necesario */
+    transform: translate(-50%, -50%) scale(3); /* Escala al triple del tamaño original */
+    width: auto; /* Mantiene el tamaño original y lo escala */
     height: auto; /* Mantiene la proporción de la imagen */
     opacity: 0; /* Inicia invisible */
     transition: opacity 0.5s ease; /* Solo transición de opacidad */
