@@ -21,23 +21,15 @@ document.addEventListener('scroll', function () {
         parallaxText.style.opacity = 1;
         parallaxText.style.transform = `scale(${1 + (scrollPosition - 100) / 200})`; // Aumenta el tamaño del texto gradualmente
 
-        // Aumenta la opacidad del logo de Waze y el tamaño hasta 3x
-        const visibility = (scrollPosition - 100) / 700; // Calcula el nivel de visibilidad
-        wazeLogo.style.opacity = visibility; // Aparece gradualmente
-        wazeLogo.style.transform = `translateX(-50%) scale(${1 + 2 * visibility})`; // Crece de 1x a 3x de tamaño
+        // Aparece gradualmente el logo de Waze sin escalado ni movimiento
+        wazeLogo.style.opacity = (scrollPosition - 100) / 700; // Solo ajusta la opacidad
+        wazeLogo.style.transform = 'none'; // Sin cambios de tamaño ni posición
     } else if (scrollPosition < 100) {
         parallaxText.style.opacity = 0; // Oculta el texto antes de que entre a la sección
         parallaxText.style.transform = 'scale(1)';
         wazeLogo.style.opacity = 0; // Mantiene el logo invisible al inicio
-        wazeLogo.style.transform = 'translateX(-50%) scale(1)'; // Restablece el tamaño y posición inicial del logo
-    } else if (scrollPosition >= 800 && scrollPosition < 1200) {
+    } else if (scrollPosition >= 800) {
         wazeLogo.style.opacity = 1; // Logo completamente visible cuando el texto está totalmente ampliado
-        wazeLogo.style.transform = 'translateX(-50%) scale(3)'; // Tamaño final 3x
-    } else if (scrollPosition >= 1200) {
-        // Mueve el logo rápidamente hacia la derecha para que salga de la pantalla
-        const moveRight = (scrollPosition - 1200) * 2; // Multiplica por un valor mayor para acelerar
-        wazeLogo.style.transform = `translateX(${moveRight}px) scale(3)`;
-        wazeLogo.style.opacity = Math.max(1 - (scrollPosition - 1200) / 150, 0); // Reduce opacidad más rápido para desaparecer
     }
 
     // Cambia el fondo de la sección a azul cuando el texto alcanza un cierto tamaño
@@ -53,6 +45,7 @@ document.addEventListener('scroll', function () {
         parallaxSection.classList.remove('black-background');
     }
 });
+
 
 // Configuración de la gráfica de tráfico de ejemplo
 document.addEventListener('DOMContentLoaded', function () {
