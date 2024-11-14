@@ -271,8 +271,8 @@
 
 .waze-logo {
     position: absolute;
-    top: 60%; /* Ajusta según sea necesario */
-    left: 50%;
+    top: 30%; /* Ajusta según sea necesario */
+    left: 30%;
     transform: translate(-50%, -50%); /* Centra el logo */
     width: 700px; /* Ajusta este valor según lo necesario para el tamaño deseado */
     height: auto; /* Mantiene la proporción de la imagen */
