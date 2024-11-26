@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan Piloto - Mapa Waze</title>
-    <!-- Estilo básico -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,5 +38,16 @@
         height="450" 
         allowfullscreen>
     </iframe>
+
+    <!-- Script para refrescar automáticamente el iframe -->
+    <script>
+        // Refrescar automáticamente el iframe cada 5 minutos (300,000 ms)
+        setInterval(() => {
+            const iframe = document.querySelector('iframe');
+            if (iframe) {
+                iframe.src = iframe.src; // Recarga el iframe
+            }
+        }, 300000); // Cambia 300000 a la cantidad de milisegundos deseados
+    </script>
 </body>
 </html>
